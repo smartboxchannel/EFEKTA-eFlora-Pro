@@ -47,6 +47,9 @@ https://github.com/sigma7i/zigbee-wiki/wiki/zigbee-firmware-install (RU)
 
 ---
 
+![eFlowerPro](https://github.com/smartboxchannel/Efekta-eFlower-Pro/blob/main/IMAGES/IMG_1.png) 
+
+
 ### How to join:
 #### If device in FN(factory new) state:
 ##### one way
