@@ -17,13 +17,9 @@ More info at http://efektalab.com/eFlowerPro
 
 ---
 
-![eFlowerPro](https://github.com/smartboxchannel/e-Flower/blob/main/IMAGES/01.png) 
+![eFlowerPro](https://github.com/smartboxchannel/Efekta-eFlower-Pro/blob/main/IMAGES/001.jpg) 
 
-![eFlowerPro](https://github.com/smartboxchannel/e-Flower/blob/main/IMAGES/02.png) 
 
-![eFlowerPro](https://github.com/smartboxchannel/e-Flower/blob/main/IMAGES/03.jpg) 
-
-![eFlowerPro](https://github.com/smartboxchannel/e-Flower/blob/main/IMAGES/04.jpg) 
 
 ---
 
