@@ -2,6 +2,7 @@
 
 e-Paper display 2.13. Powered by SoC CC2530, the sensor is based on a capacitive measurement method. The sensor is powered by a AAA batteries.
 
+## You can make your own pcb here - https://www.pcbway.com/setinvite.aspx?inviteid=550959
 
 #### Donate to me: https://paypal.me/efektalab or just buy to support this project
 
