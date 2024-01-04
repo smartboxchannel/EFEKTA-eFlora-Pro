@@ -1,5 +1,9 @@
 # e-Flower Pro (Plant-Watering-Sensor-Zigbee with e-ink 2.13 display)
 
+Телеграм чат DIY Devices - https://t.me/diy_devices
+
+Продажа DIY Устройств - https://t.me/diydevmart
+
 e-Paper display 2.13. Powered by SoC CC2530, the sensor is based on a capacitive measurement method. The sensor is powered by a AAA batteries.
 
 ## You can make your own pcb here - https://www.pcbway.com/setinvite.aspx?inviteid=550959
