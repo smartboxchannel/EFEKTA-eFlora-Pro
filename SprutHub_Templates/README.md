@@ -15,3 +15,5 @@ https://wiki.spruthub.ru/index.php?title=%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0
 ![EFEKTA eFlora Pro](https://github.com/smartboxchannel/Efekta-eFlower-Pro/blob/main/IMAGES/sh03.png) 
 
 ![EFEKTA eFlora Pro](https://github.com/smartboxchannel/Efekta-eFlower-Pro/blob/main/IMAGES/sh04.png) 
+
+![EFEKTA eFlora Pro](https://github.com/smartboxchannel/Efekta-eFlower-Pro/blob/main/IMAGES/sh05.png) 
