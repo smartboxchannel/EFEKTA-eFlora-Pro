@@ -10,7 +10,7 @@ e-Paper display 2.13. Powered by SoC CC2530, the sensor is based on a capacitive
 
 ---
 
-![eFlowerPro](https://github.com/smartboxchannel/Efekta-eFlower-Pro/blob/main/IMAGES/00001.jpg) 
+![eFlowerPro](https://github.com/smartboxchannel/Efekta-eFlower-Pro/blob/main/IMAGES/00001.png) 
 
 
 
