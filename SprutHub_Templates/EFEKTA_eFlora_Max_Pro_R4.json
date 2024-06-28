@@ -64,12 +64,37 @@
         "link": {
           "endpoint": 1,
           "cluster": "0001_PowerConfiguration",
-          "attribute": "0021_BatteryPercentageRemaining",
+		  "attribute": "0020_BatteryVoltage"
+        },
+        "bind": true,
+        "report": {
+          "min": 1800,
+          "max": 43200,
+          "change": 1
+        }
+    },
+	{
+        "link": {
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
+          "attribute": "0021_BatteryPercentageRemaining"
+        },
+        "bind": true,
+        "report": {
+          "min": 1800,
+          "max": 43200,
+          "change": 1
+        }
+    },
+	{
+        "link": {
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
 		  "attribute": "003E_BatteryAlarmState"
         },
         "bind": true,
         "report": {
-          "min": 3600,
+          "min": 1800,
           "max": 43200,
           "change": 1
         }
@@ -260,7 +285,7 @@
         },
         {
           "value": 1,
-          "name": "Ультра быстрый"
+          "name": "Ультра Быстрый"
         }
       ]
     },
