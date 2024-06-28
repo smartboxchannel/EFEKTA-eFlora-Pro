@@ -1,0 +1,397 @@
+{
+  "name": "Датчик почвы eFlora Max Pro",
+  "manufacturer": "EfektaLab",
+  "model": "EFEKTA_eFlora_Max_Pro",
+  "manufacturerId": "EfektaLab",
+  "modelId": "EFEKTA_eFlora_Max_Pro",
+  "catalogId": -1,
+  "status": "Test",
+  "template": "/_Battery/BatteryPercentageRemaining.json",
+  "init": [
+    {
+      "zcl": [
+	    {
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
+          "attribute": "0201_Custom",
+          "zclDataType": "UNSIGNED_16_BIT_INTEGER"
+        },
+        {
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
+          "attribute": "F004_Custom",
+          "zclDataType": "UNSIGNED_8_BIT_INTEGER"
+        },
+		{
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
+          "attribute": "F005_Custom",
+          "zclDataType": "UNSIGNED_8_BIT_INTEGER"
+        },
+		{
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
+          "attribute": "0236_Custom",
+          "zclDataType": "SIGNED_8_BIT_INTEGER"
+        },
+		{
+          "endpoint": 3,
+          "cluster": "0408_SoilMoisture",
+          "attribute": "0504_Custom",
+          "zclDataType": "BOOLEAN"
+        },
+		{
+          "endpoint": 3,
+          "cluster": "0408_SoilMoisture",
+          "attribute": "0505_Custom",
+          "zclDataType": "BOOLEAN"
+        },
+		{
+          "endpoint": 3,
+          "cluster": "0408_SoilMoisture",
+          "attribute": "0502_Custom",
+          "zclDataType": "UNSIGNED_16_BIT_INTEGER"
+        },
+		{
+          "endpoint": 3,
+          "cluster": "0408_SoilMoisture",
+          "attribute": "0503_Custom",
+          "zclDataType": "UNSIGNED_16_BIT_INTEGER"
+        }
+      ]
+    },
+    {
+        "link": {
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
+          "attribute": "0021_BatteryPercentageRemaining",
+		  "attribute": "003E_BatteryAlarmState"
+        },
+        "bind": true,
+        "report": {
+          "min": 3600,
+          "max": 43200,
+          "change": 1
+        }
+    },
+	{
+      "link": {
+        "endpoint": 1,
+        "cluster": "000A_Time",
+        "attribute": "0007_LocalTime"
+      },
+      "bind": true,
+	  "report": false
+    },
+	{
+      "link": {
+        "endpoint": 2,
+        "cluster": "0402_TemperatureMeasurement",
+        "attribute": "0000_MeasuredValue"
+      },
+      "bind": true,
+      "report": {
+        "min": 300,
+        "max": 3600,
+        "change": 25
+	  }
+    },
+    {
+      "link": {
+        "endpoint": 2,
+        "cluster": "0405_RelativeHumidityMeasurement",
+        "attribute": "0000_MeasuredValue"
+      },
+      "bind": true,
+      "report": {
+        "min": 300,
+        "max": 3600,
+        "change": 50
+	  }
+    },
+	{
+      "link": {
+        "endpoint": 2,
+        "cluster": "0400_IlluminanceMeasurement",
+        "attribute": "0000_MeasuredValue"
+      },
+      "bind": true,
+      "report": {
+        "min": 600,
+        "max": 3600,
+        "change": 50
+      }
+    },
+	{
+      "link": {
+        "endpoint": 3,
+        "cluster": "0408_SoilMoisture",
+        "attribute": "0000_MeasuredValue"
+      },
+      "bind": true,
+      "report": {
+        "min": 600,
+        "max": 21600,
+        "change": 100
+      }
+    }
+  ],
+  "services": [
+    {
+      "type": "TemperatureSensor",
+      "characteristics": [
+        {
+          "type": "CurrentTemperature",
+          "link": {
+            "endpoint": 2,
+            "cluster": "0402_TemperatureMeasurement",
+            "attribute": "0000_MeasuredValue"
+          }
+        }
+      ]
+    },
+    {
+      "type": "LightSensor",
+      "characteristics": [
+        {
+          "type": "CurrentAmbientLightLevel",
+          "link": {
+            "endpoint": 2,
+            "cluster": "0400_IlluminanceMeasurement",
+            "attribute": "0000_MeasuredValue"
+          }
+        }
+      ]
+    },
+    {
+      "type": "HumiditySensor",
+      "characteristics": [
+        {
+          "type": "CurrentRelativeHumidity",
+          "link": {
+            "endpoint": 2,
+            "cluster": "0405_RelativeHumidityMeasurement",
+            "attribute": "0000_MeasuredValue"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Влажность почвы",
+      "type": "HumiditySensor",
+      "characteristics": [
+        {
+          "type": "CurrentRelativeHumidity",
+          "link": {
+            "endpoint": 3,
+            "cluster": "0408_SoilMoisture",
+            "attribute": "0000_MeasuredValue"
+          }
+        }
+      ]
+    }
+  ], 
+  "options": [
+    {
+      "link": {
+        "endpoint": 1,
+        "cluster": "0001_PowerConfiguration",
+        "attribute": "0236_Custom"
+      },
+      "name": "Мощность радио передатчика",
+	  "description": "Чем выше мощность, тем выше энергопотребление, на максимальной мощности в 19dbm, потребление 100mA при передаче, при можности 4dbm потребление 50mA",
+      "type": "Integer",
+      "init": false,
+      "value": 19,
+      "values": [
+        {
+          "value": 0,
+          "name": "0dbm"
+        },
+        {
+          "value": 4,
+          "name": "4dbm"
+        },
+        {
+          "value": 10,
+          "name": "10dbm"
+        },
+        {
+          "value": 19,
+          "name": "19dbm"
+        }
+      ]
+    },
+	{
+        "link": {
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
+          "attribute": "F004_Custom"
+        },
+        "name": "Инвертирование цвета e-paper дисплея",
+        "type": "Boolean",
+        "init": false,
+        "value": 1,
+		"values": [
+        {
+          "value": 0,
+          "name": "Черное на белом"
+        },
+        {
+          "value": 1,
+          "name": "Белое на черном"
+        }
+      ]
+    },
+	{
+        "link": {
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
+          "attribute": "F005_Custom"
+        },
+        "name": "Режим обновления данных на e-paper дисплее",
+        "type": "Boolean",
+        "init": false,
+        "value": 0,
+		"values": [
+        {
+          "value": 0,
+          "name": "Быстрый"
+        },
+        {
+          "value": 1,
+          "name": "Ультра Быстрый"
+        }
+      ]
+    },
+	{
+        "link": {
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
+          "attribute": "0201_Custom"
+        },
+        "name": "Интервал чтения сенсоров, в минутах",
+        "type": "Integer",
+		"unit": "мин.",
+        "init": false,
+        "value": 5,
+        "minValue": 1,
+        "maxValue": 360,
+        "minStep": 1
+    },
+	{
+      "link": {
+        "endpoint": 3,
+        "cluster": "0408_SoilMoisture",
+        "attribute": "0502_Custom"
+		},
+      "name": "Нижняя граница пересчета влажности почвы для 0%",
+      "type": "Integer",
+      "init": false,
+      "value": 25,
+      "minValue": 0,
+      "maxValue": 99
+	},
+	{
+      "link": {
+        "endpoint": 3,
+        "cluster": "0408_SoilMoisture",
+        "attribute": "0503_Custom"
+		},
+      "name": "Верхняя граница пересчета влажности почвы для 100%",
+      "type": "Integer",
+      "init": false,
+      "value": 100,
+      "minValue": 1,
+      "maxValue": 100
+	},
+	{
+        "link": {
+          "endpoint": 3,
+          "cluster": "0408_SoilMoisture",
+          "attribute": "0504_Custom"
+          },
+        "name": "Метод расчета влажности почвы",
+        "type": "Boolean",
+        "init": false,
+        "value": 0,
+		"values": [
+        {
+          "value": 0,
+          "name": "Метод №1"
+        },
+        {
+          "value": 1,
+          "name": "Метод №2"
+        }
+      ]
+    },
+	{
+        "link": {
+          "endpoint": 3,
+          "cluster": "0408_SoilMoisture",
+          "attribute": "0505_Custom"
+          },
+        "name": "Температурная компенсация",
+		"description": "При нагрепе платы датчика может наблюдатся дрейф измереннорго значения влажности почвы.",
+        "type": "Boolean",
+        "init": false,
+        "value": true
+    },
+	{
+      "link": {
+        "endpoint": 1,
+        "cluster": "0001_PowerConfiguration",
+        "output": true
+      },
+      "name": "Прямая передача данных о заряде батареи на другое устройство",
+      "description": "Привязка к другому устройству по данным заряда батареи, для прямой передачи данных на другое устройство.",
+      "type": "String",
+      "bind": true
+    },
+	{
+      "link": {
+        "endpoint": 2,
+        "cluster": "0402_TemperatureMeasurement",
+        "output": true
+      },
+      "name": "Прямая передача данных о температуре воздуха на другое устройство",
+      "description": "Привязка к другому устройству по данным температуры воздуха, для прямой передачи данных на другое устройство.",
+      "type": "String",
+      "bind": true
+    },
+	{
+      "link": {
+        "endpoint": 2,
+        "cluster": "0405_RelativeHumidityMeasurement",
+        "output": true
+      },
+      "name": "Прямая передача данных о влажности воздуха на другое устройство",
+      "description": "Привязка к другому устройству по данным влажности воздуха, для прямой передачи данных на другое устройство.",
+      "type": "String",
+      "bind": true
+    },
+	{
+      "link": {
+        "endpoint": 2,
+        "cluster": "0400_IlluminanceMeasurement",
+        "output": true
+      },
+      "name": "Прямая передача данных об освещенности на другое устройство",
+      "description": "Привязка к другому устройству по данным освещенности, для прямой передачи данных на другое устройство.",
+      "type": "String",
+      "bind": true
+    },
+	{
+      "link": {
+        "endpoint": 3,
+        "cluster": "0408_SoilMoisture",
+        "output": true
+      },
+      "name": "Прямая передача данных о влажности почвы на другое устройство",
+      "description": "Привязка к другому устройству по данным влажности почвы, для прямой передачи данных на другое устройство.",
+      "type": "String",
+      "bind": true
+    }
+  ]
+}  
