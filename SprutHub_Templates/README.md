@@ -5,3 +5,13 @@ https://wiki.spruthub.ru/index.php?title=%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0
 Продажа DIY Устройств - https://t.me/diydevmart
 
 Описание: [https://telegra.ph/Datchik-temperatury-i-vlazhnosti-vozduha-EFEKTA-DUO--DUO-LR-03-06](https://telegra.ph/Datchik-vlazhnosti-pochvy-EFEKTA-eFlora-Pro-02-12)
+
+![EFEKTA eFlora Pro](https://github.com/smartboxchannel/Efekta-eFlower-Pro/blob/main/IMAGES/00001.png) 
+
+![EFEKTA eFlora Pro](https://github.com/smartboxchannel/Efekta-eFlower-Pro/blob/main/IMAGES/sh01.png) 
+
+![EFEKTA eFlora Pro](https://github.com/smartboxchannel/Efekta-eFlower-Pro/blob/main/IMAGES/sh02.png) 
+
+![EFEKTA eFlora Pro](https://github.com/smartboxchannel/Efekta-eFlower-Pro/blob/main/IMAGES/sh03.png) 
+
+![EFEKTA eFlora Pro](https://github.com/smartboxchannel/Efekta-eFlower-Pro/blob/main/IMAGES/sh04.png) 
