@@ -159,6 +159,61 @@
         "max": 21600,
         "change": 100
       }
+    },
+	{
+      "link": {
+        "endpoint": 1,
+        "cluster": "0001_PowerConfiguration",
+        "output": true
+      },
+      "name": "Прямая передача данных о заряде батареи на другое устройство",
+      "description": "Привязка к другому устройству по данным заряда батареи, для прямой передачи данных на другое устройство.",
+      "type": "String",
+      "bind": true
+    },
+	{
+      "link": {
+        "endpoint": 2,
+        "cluster": "0402_TemperatureMeasurement",
+        "output": true
+      },
+      "name": "Прямая передача данных о температуре воздуха на другое устройство",
+      "description": "Привязка к другому устройству по данным температуры воздуха, для прямой передачи данных на другое устройство.",
+      "type": "String",
+      "bind": true
+    },
+	{
+      "link": {
+        "endpoint": 2,
+        "cluster": "0405_RelativeHumidityMeasurement",
+        "output": true
+      },
+      "name": "Прямая передача данных о влажности воздуха на другое устройство",
+      "description": "Привязка к другому устройству по данным влажности воздуха, для прямой передачи данных на другое устройство.",
+      "type": "String",
+      "bind": true
+    },
+	{
+      "link": {
+        "endpoint": 2,
+        "cluster": "0400_IlluminanceMeasurement",
+        "output": true
+      },
+      "name": "Прямая передача данных об освещенности на другое устройство",
+      "description": "Привязка к другому устройству по данным освещенности, для прямой передачи данных на другое устройство.",
+      "type": "String",
+      "bind": true
+    },
+	{
+      "link": {
+        "endpoint": 3,
+        "cluster": "0408_SoilMoisture",
+        "output": true
+      },
+      "name": "Прямая передача данных о влажности почвы на другое устройство",
+      "description": "Привязка к другому устройству по данным влажности почвы, для прямой передачи данных на другое устройство.",
+      "type": "String",
+      "bind": true
     }
   ],
   "services": [
@@ -230,16 +285,8 @@
       "value": 19,
       "values": [
         {
-          "value": 0,
-          "name": "0dbm"
-        },
-        {
           "value": 4,
           "name": "4dbm"
-        },
-        {
-          "value": 10,
-          "name": "10dbm"
         },
         {
           "value": 19,
@@ -256,14 +303,14 @@
         "name": "Инвертирование цвета e-paper дисплея",
         "type": "Boolean",
         "init": false,
-        "value": 1,
+        "value": true,
 		"values": [
         {
-          "value": 0,
+          "value": false,
           "name": "Черное на белом"
         },
         {
-          "value": 1,
+          "value": true,
           "name": "Белое на черном"
         }
       ]
@@ -277,14 +324,14 @@
         "name": "Режим обновления данных на e-paper дисплее",
         "type": "Boolean",
         "init": false,
-        "value": 0,
+        "value": false,
 		"values": [
         {
-          "value": 0,
+          "value": false,
           "name": "Быстрый"
         },
         {
-          "value": 1,
+          "value": true,
           "name": "Ультра Быстрый"
         }
       ]
@@ -334,89 +381,13 @@
         "link": {
           "endpoint": 3,
           "cluster": "0408_SoilMoisture",
-          "attribute": "0504_Custom"
-          },
-        "name": "Метод расчета влажности почвы",
-        "type": "Boolean",
-        "init": false,
-        "value": 0,
-		"values": [
-        {
-          "value": 0,
-          "name": "Метод №1"
-        },
-        {
-          "value": 1,
-          "name": "Метод №2"
-        }
-      ]
-    },
-	{
-        "link": {
-          "endpoint": 3,
-          "cluster": "0408_SoilMoisture",
           "attribute": "0505_Custom"
           },
         "name": "Температурная компенсация",
-		"description": "При нагрепе платы датчика может наблюдатся дрейф измереннорго значения влажности почвы.",
+	"description": "При нагрепе платы датчика может наблюдатся дрейф измереннорго значения влажности почвы.",
         "type": "Boolean",
         "init": false,
         "value": true
-    },
-	{
-      "link": {
-        "endpoint": 1,
-        "cluster": "0001_PowerConfiguration",
-        "output": true
-      },
-      "name": "Прямая передача данных о заряде батареи на другое устройство",
-      "description": "Привязка к другому устройству по данным заряда батареи, для прямой передачи данных на другое устройство.",
-      "type": "String",
-      "bind": true
-    },
-	{
-      "link": {
-        "endpoint": 2,
-        "cluster": "0402_TemperatureMeasurement",
-        "output": true
-      },
-      "name": "Прямая передача данных о температуре воздуха на другое устройство",
-      "description": "Привязка к другому устройству по данным температуры воздуха, для прямой передачи данных на другое устройство.",
-      "type": "String",
-      "bind": true
-    },
-	{
-      "link": {
-        "endpoint": 2,
-        "cluster": "0405_RelativeHumidityMeasurement",
-        "output": true
-      },
-      "name": "Прямая передача данных о влажности воздуха на другое устройство",
-      "description": "Привязка к другому устройству по данным влажности воздуха, для прямой передачи данных на другое устройство.",
-      "type": "String",
-      "bind": true
-    },
-	{
-      "link": {
-        "endpoint": 2,
-        "cluster": "0400_IlluminanceMeasurement",
-        "output": true
-      },
-      "name": "Прямая передача данных об освещенности на другое устройство",
-      "description": "Привязка к другому устройству по данным освещенности, для прямой передачи данных на другое устройство.",
-      "type": "String",
-      "bind": true
-    },
-	{
-      "link": {
-        "endpoint": 3,
-        "cluster": "0408_SoilMoisture",
-        "output": true
-      },
-      "name": "Прямая передача данных о влажности почвы на другое устройство",
-      "description": "Привязка к другому устройству по данным влажности почвы, для прямой передачи данных на другое устройство.",
-      "type": "String",
-      "bind": true
     }
   ]
 }  
